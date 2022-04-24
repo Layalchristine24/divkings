@@ -1,0 +1,38 @@
+# directories
+man/
+doc/
+docs/
+**/work/
+**/obsolet/
+**/obsolete/
+# Files
+*work*
+*.Rproj
+*.ht*
+*.png
+*.PNG
+*.pdf
+*.zip
+*.gz
+*.txt
+*.lnk
+*.doc
+*.docx
+*.xlsm
+*.xlsx
+*.msg
+*.aux
+*.bbl
+*.blg
+*.log
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+NAMESPACE
+Thumbs.db
+.Rbuildignore
+# Output files from R CMD build
+/*.tar.gz
+# Output files from R CMD check
+/*.Rcheck/
