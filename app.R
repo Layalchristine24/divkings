@@ -76,13 +76,6 @@ server <- function(input, output, session) {
 
   # Input Data
   datasetInput <- reactive({
-
-    # bmi <- input$weight/( (input$height/100) * (input$height/100) )
-    # bmi <- data.frame(bmi)
-    # names(bmi) <- "BMI"
-    # print(bmi)
-    # print(paste0(input$ticker_symbol, ": ",
-    #              input$dividend_yield, " ", input$currency, " Dividend Yield"))
     final_eval <- if (
       input$dividend_yield >= 2 &
         input$per <= 20) {
