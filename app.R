@@ -24,30 +24,77 @@ ui <- fluidPage(
           label = "Ticker Symbol",
           value = ""
         ),
-        textInput(
+        radioButtons(
           inputId = "currency",
           label = "Currency",
-          value = ""
+          choices = list("USD", "EUR", "CHF", "GBP")
         ),
         numericInput(
           inputId = "dividend_yield",
           label = "Dividend Yield in percent",
-          value = 2,
+          value = "",
           min = 0,
           max = 100,
           step = 0.1
         ),
         numericInput(
           inputId = "per",
-          label = "Price Earnings Ratio",
-          value = 10,
+          label = "Price-to-Earnings Ratio (PER)",
+          value = "",
           min = 0,
           max = 100,
           step = 0.01
         ),
+        numericInput(
+          inputId = "eps",
+          label = "Earnings Per Share (EPS)",
+          value = "",
+          min = 0,
+          max = 100,
+          step = 0.01
+        ),
+        numericInput(
+          inputId = "eps",
+          label = "EPS Observed Growth",
+          value = "",
+          min = 0,
+          max = 100,
+          step = 0.01
+        ),
+        numericInput(
+          inputId = "roi",
+          label = "Return On Investment (ROI) in Percent",
+          value = "",
+          min = 0,
+          max = 100,
+          step = 0.01
+        ),
+        numericInput(
+          inputId = "payout_ratio",
+          label = "Payout Ratio",
+          value = "",
+          min = 0,
+          max = 100,
+          step = 0.01
+        ),
+        radioButtons(
+          inputId = "eps_obs_growth",
+          label = "EPS Observed Growth",
+          choices = list("Positive", "Negative")
+        ),
+        radioButtons(
+          inputId = "eps_proj_growth",
+          label = "EPS Projected Growth",
+          choices = list("Positive", "Negative")
+        ),
+        radioButtons(
+          inputId = "obs_total_earn_growth",
+          label = "Total Earnings Observed Growth",
+          choices = list("Positive", "Negative")
+        ),
         actionButton("submitbutton",
-          "Submit",
-          class = "btn btn-primary"
+                     "Submit",
+                     class = "btn btn-primary"
         )
       ),
       mainPanel(
@@ -56,17 +103,17 @@ ui <- fluidPage(
         tableOutput("tabledata") # Results table
       ) # mainPanel()
     ), # tabPanel(), Home
-
+    
     tabPanel(
       "About",
       titlePanel("About"),
       div(includeMarkdown("about.md"),
-        align = "justify"
-      )
+          align = "justify"
+      ),
+      tableOutput(outputId = "table")
     ) # tabPanel(), About
   ) # navbarPage()
 ) # fluidPage()
-
 
 ####################################
 # Server                           #
