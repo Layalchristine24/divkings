@@ -53,7 +53,7 @@ ui <- fluidPage(
         "REF_VALUES_MI",
         value = REF_VALUES,
         row = list(names = FALSE),
-        class = "numeric"
+        class = "character"
       )
     )
   ),
@@ -96,8 +96,8 @@ server <- function(input, output, session) {
   })
 
   output$table3 <- renderTable({
-    req(rv$time)
-    data.frame(rv$time, rv$speed)
+    req(REF_VALUES_TIB$value)
+    data.frame(REF_VALUES_TIB$variable, REF_VALUES_TIB$value)
   })
 
   # Creating Reactive Values
