@@ -16,14 +16,14 @@ ref_values <- data.table::fread(
   as.matrix()
 
 # Tibble
-REF_VALUES_TIB <- data.table::fread(
+ref_values_tib <- data.table::fread(
   file = "data/ref_values.csv",
   stringsAsFactors = TRUE
 ) %>%
   as_tibble()
 
 # Names of matrix = variable of tibble
-rownames(ref_values) <- REF_VALUES_TIB$variable
+rownames(ref_values) <- ref_values_tib$variable
 
 ### Define UI
 ui <- fluidPage(
@@ -92,8 +92,8 @@ server <- function(input, output, session) {
   })
 
   output$table3 <- renderTable({
-    req(REF_VALUES_TIB$value)
-    data.frame(REF_VALUES_TIB$variable, REF_VALUES_TIB$value)
+    req(ref_values_tib$value)
+    data.frame(ref_values_tib$variable, ref_values_tib$value)
   })
 
   # Creating Reactive Values
