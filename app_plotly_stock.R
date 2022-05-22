@@ -1,8 +1,6 @@
-#################################################################################
-# Layal Christine Lettry                                                        #
-# Source: https://www.rstudio.com/blog/how-to-use-shinymatrix-and-plotly-graphs/#
-#################################################################################
-### Load packages
+# Layal Christine Lettry
+# Source: https://www.rstudio.com/blog/how-to-use-shinymatrix-and-plotly-graphs/
+#Load packages
 library(shiny)
 library(tidyverse)
 library(plotly)
@@ -10,14 +8,12 @@ library(shinyMatrix)
 library(dplyr)
 library(data.table)
 #--- Import data ---------------------------------------------------------------
-
 # Matrix
-REF_VALUES <- data.table::fread(
+ref_values <- data.table::fread(
   file = "data/ref_values.csv",
   stringsAsFactors = TRUE
 ) %>%
   as.matrix()
-
 
 # Tibble
 REF_VALUES_TIB <- data.table::fread(
@@ -27,7 +23,7 @@ REF_VALUES_TIB <- data.table::fread(
   as_tibble()
 
 # Names of matrix = variable of tibble
-rownames(REF_VALUES) <- REF_VALUES_TIB$variable
+rownames(ref_values) <- REF_VALUES_TIB$variable
 
 ### Define UI
 ui <- fluidPage(
@@ -51,7 +47,7 @@ ui <- fluidPage(
       condition = "input.toggleInputSelect=='handTyped'",
       matrixInput(
         "REF_VALUES_MI",
-        value = REF_VALUES,
+        value = ref_values,
         row = list(names = FALSE),
         class = "character"
       )
@@ -88,7 +84,7 @@ ui <- fluidPage(
 ### Define server logic
 server <- function(input, output, session) {
   output$table1 <- renderTable({
-    REF_VALUES
+    ref_values
   })
 
   output$table2 <- renderTable({
