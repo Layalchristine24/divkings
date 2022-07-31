@@ -1,9 +1,9 @@
 # Stock-trading tools analysis
 
 ## Concept of the project
-My new project is about analysing stock-trading tools in order to be able to compare
-faster which companies can be trusted or not from a long-term perspective.
-I focus on stocks showing growing dividends.
+My new project is to give access to user-friendly tools for computing the final 
+value of an investment project.
+
 
 ## Shiny App
 I intend to develop stock-trading tools which can be more user-friendly in a Shiny App. 
