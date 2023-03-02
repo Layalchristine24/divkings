@@ -1,16 +1,31 @@
-# Stock-trading tools analysis
----
 
-## Concept of the project
-My new project is to give access to user-friendly tools for computing the final 
-value of an investment project.
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-## Shiny App
-I intend to develop stock-trading tools which can be more user-friendly in a Shiny App. 
+# divkings
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of divkings is to give access to user-friendly tools to select
+the companies which increase the size of their dividend. Some are called
+*dividend kings* or *dividend aristocrats* because their dividends have
+raised continuously over the past 50 and 25 years respectively and they
+belong to the [S&P 500
+index](https://www.investopedia.com/terms/s/sp500.asp).
 
 ## Objective
-The final objective of this project is to give a new tool to the people 
-who are starting to invest in the stock market.
 
-This is a new project, so please stay tuned ! 
+The final objective of this project is to give a new tool to the people
+who are starting to invest in the stock market and want to focus on .
 
+This is a new project, so please stay tuned !
+
+## Installation
+
+You can install the development version of divkings from
+[GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("Layalchristine24/divkings")
+```
